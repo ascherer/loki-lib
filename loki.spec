@@ -9,7 +9,6 @@ URL: http://sourceforge.net/projects/loki-lib
 Distribution: SuSE 10.2 (i586)
 Source0: http://prdownloads.sourceforge.net/loki-lib/%{source_name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildArch: i586
 
 %package devel
 Summary: The Loki C++ headers and development libraries
