@@ -72,5 +72,5 @@ rm -rf $RPM_BUILD_ROOT
 - Also building shared library
 - Removed LF chars so that rpmbuild generated scriptlets work
 
-* Mon Jan 06 2006 Andreas Scherer <andreas_hacker@freenet.de>
+* Fri Jan 06 2006 Andreas Scherer <andreas_hacker@freenet.de>
 - Initial build
