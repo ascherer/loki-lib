@@ -1,8 +1,8 @@
 %define source_name loki
 Name: %{source_name}-lib
 Summary: Loki C++ Library
-Version: 0.1.6
-Release: 2
+Version: 0.1.7
+Release: 1
 License: MIT License
 Group: Productivity/Development
 URL: http://sourceforge.net/projects/loki-lib
