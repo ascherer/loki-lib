@@ -3,13 +3,23 @@
 %define source_name loki
 Name: %{source_name}-lib
 Summary: Loki C++ Library
-Version: 0.1.7
-Release: 1
 License: MIT License
+URL: http://loki-lib.sourceforge.net/
+
+Version: 0.1.7
+Release: 2
+Packager: Andreas Scherer <https://ascherer.github.io/>
+
+%if %{_vendor} == "debbuild"
+Group: devel
+Distribution: Kubuntu 16.04 (x86_64)
+%else
 Group: Productivity/Development
-URL: http://sourceforge.net/projects/loki-lib
-Distribution: SuSE 10.2 (i586)
-Source0: http://prdownloads.sourceforge.net/loki-lib/%{source_name}-%{version}.tar.gz
+Distribution: openSUSE 42 (x86_64)
+%endif
+
+Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 %package devel
@@ -35,7 +45,7 @@ HTML documentation files for the Loki C++ Library
 %endif
 
 %prep
-%setup -n %{source_name}-%{version} -q
+%autosetup -n %{source_name}-%{version}
 
 %build
 make build-static build-shared check
