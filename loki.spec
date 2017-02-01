@@ -16,6 +16,7 @@ Distribution: Kubuntu 16.04 (x86_64)
 %else
 Group: Productivity/Development
 Distribution: openSUSE 42 (x86_64)
+%global __echo `which echo`
 %endif
 
 Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
@@ -60,6 +61,9 @@ cp -a include/%{source_name} $RPM_BUILD_ROOT/usr/include
 mkdir -p $RPM_BUILD_ROOT/usr/lib
 cp -a lib/lib%{source_name}.* $RPM_BUILD_ROOT/usr/lib
 (cd $RPM_BUILD_ROOT/usr/lib && ln -s lib%{source_name}.so.%{version} lib%{source_name}.so)
+%{__mkdir_p} %{buildroot}%{_sysconfdir}/ld.so.conf.d
+%{__echo} "%{_libdir}/%{name}" > \
+	%{buildroot}%{_sysconfdir}/ld.so.conf.d/%{name}.conf
 %if %{with doc}
 mkdir -p $RPM_BUILD_ROOT/usr/share/doc/%{name}-%{version}
 cp -a doc/{flex,html,yasli} $RPM_BUILD_ROOT/usr/share/doc/%{name}-%{version}
@@ -72,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(755,root,root)
 /usr/lib/lib%{source_name}.so
 /usr/lib/lib%{source_name}.so.%{version}
+%{_sysconfdir}/ld.so.conf.d/%{name}.conf
 
 %files devel
 %defattr(644,root,root,755)
@@ -84,11 +89,16 @@ rm -rf $RPM_BUILD_ROOT
 %doc /usr/share/doc/%{name}-%{version}
 %endif
 
-%post -p /sbin/ldconfig
+%post
+%{__ldconfig}
 
-%postun -p /sbin/ldconfig
+%postun
+%{__ldconfig}
 
 %changelog
+* Tue Feb 01 2017 Andreas Scherer <andreas_github@freenet.de>
+- Update for rpmbuild 4.12.0.1 and debbuild 17.1.2
+
 * Thu Mar 16 2006 Regis Desgroppes <rdesgroppes@besancon.parkeon.com>
 - Renamed package to loki-lib (SourceForge project name) as there is another package named loki (Biology)
 - Created devel and doc subpackages
