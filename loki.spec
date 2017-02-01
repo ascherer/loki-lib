@@ -32,7 +32,8 @@ HTML documentation files for the Loki C++ Library
 %setup -n %{source_name}-%{version} -q
 
 %build
-make build-static build-shared
+make build-static build-shared check
+cd doc; doxygen Doxyfile
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/lib%{source_name}.a
 
 %files doc
-%defattr(644,root,root)
+%defattr(644,root,root,755)
 %doc /usr/share/doc/%{name}-%{version}
 
 %post -p /sbin/ldconfig
