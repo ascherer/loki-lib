@@ -49,44 +49,41 @@ HTML documentation files for the Loki C++ Library
 %autosetup -n %{source_name}-%{version}
 
 %build
-make build-static build-shared check
+%{__make} build-static build-shared check
 %if %{with doc}
 cd doc; doxygen Doxyfile
 %endif
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/include
-cp -a include/%{source_name} $RPM_BUILD_ROOT/usr/include
-mkdir -p $RPM_BUILD_ROOT/usr/lib
-cp -a lib/lib%{source_name}.* $RPM_BUILD_ROOT/usr/lib
-(cd $RPM_BUILD_ROOT/usr/lib && ln -s lib%{source_name}.so.%{version} lib%{source_name}.so)
+%{__rm} -rf %{buildroot}
+%{__mkdir_p} %{buildroot}%{_includedir}
+%{__cp} -a include/%{source_name} %{buildroot}%{_includedir}
+%{__mkdir_p} %{buildroot}%{_libdir}
+%{__cp} -a lib/lib%{source_name}.* %{buildroot}%{_libdir}
+(cd %{buildroot}%{_libdir} && ln -s lib%{source_name}.so.%{version} lib%{source_name}.so)
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/ld.so.conf.d
 %{__echo} "%{_libdir}/%{name}" > \
 	%{buildroot}%{_sysconfdir}/ld.so.conf.d/%{name}.conf
 %if %{with doc}
-mkdir -p $RPM_BUILD_ROOT/usr/share/doc/%{name}-%{version}
-cp -a doc/{flex,html,yasli} $RPM_BUILD_ROOT/usr/share/doc/%{name}-%{version}
+%{__mkdir_p} %{buildroot}%{_docdir}/%{name}-%{version}
+%{__cp} -a doc/{flex,html,yasli} %{buildroot}%{_docdir}/%{name}-%{version}
 %endif
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(755,root,root)
-/usr/lib/lib%{source_name}.so
-/usr/lib/lib%{source_name}.so.%{version}
+%{_libdir}/lib%{source_name}.so
+%{_libdir}/lib%{source_name}.so.%{version}
 %{_sysconfdir}/ld.so.conf.d/%{name}.conf
 
 %files devel
 %defattr(644,root,root,755)
-/usr/include/%{source_name}
-/usr/lib/lib%{source_name}.a
+%{_includedir}/%{source_name}
+%{_libdir}/lib%{source_name}.a
 
 %if %{with doc}
 %files doc
 %defattr(644,root,root,755)
-%doc /usr/share/doc/%{name}-%{version}
+%doc %{_docdir}/%{name}-%{version}
 %endif
 
 %post
