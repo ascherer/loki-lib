@@ -86,11 +86,9 @@ cd doc; doxygen Doxyfile
 %doc %{_docdir}/%{name}-%{version}
 %endif
 
-%post
-%{__ldconfig}
+%post -p %{__ldconfig}
 
-%postun
-%{__ldconfig}
+%postun -p %{__ldconfig}
 
 %changelog
 * Tue Feb 01 2017 Andreas Scherer <andreas_github@freenet.de>
