@@ -20,6 +20,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 
 Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
+Patch1: 0001-Clean-build-of-LevelMutex.patch
+Patch2: 0002-Clear-CachedFactoryTest.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 

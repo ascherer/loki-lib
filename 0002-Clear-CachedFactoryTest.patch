@@ -1,0 +1,43 @@
+From f9a079b32899dd710692b4e461125bb34f7f51a1 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Thu, 2 Feb 2017 19:42:07 +0100
+Subject: [PATCH 2/2] Clear CachedFactoryTest.
+
+---
+ test/CachedFactory/CachedFactoryTest.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/CachedFactory/CachedFactoryTest.cpp b/test/CachedFactory/CachedFactoryTest.cpp
+index e28a446..4b824c8 100644
+--- a/test/CachedFactory/CachedFactoryTest.cpp
++++ b/test/CachedFactory/CachedFactoryTest.cpp
+@@ -48,7 +48,7 @@ typedef long milliSec;
+     }
+ #else
+ 	#include <unistd.h>
+-	void Sleep(unsigned int t) { usleep( 1000 * static_cast<unsigned long>(t));}
++	void Sleep(unsigned int t) { usleep( 1000 * t);}
+     /**
+      * Returns the number of milliseconds elapsed from the epoch.
+      * This counter might overrun and come back to 0.
+@@ -176,7 +176,7 @@ void unitTestCachePerformance(int loop){
+         CC.ReleaseObject(pProduct);
+     }
+     elapsedCache = getmilliSeconds() - start;
+-    cout << "No cache "<<elapsedNoCache<<" ms | Cache "<<elapsedCache<<" ms | Efficiency " << (double(elapsedNoCache)/elapsedCache)-1 << endl;
++    cout << "No cache "<<elapsedNoCache<<" ms | Cache "<<elapsedCache<<" ms | Efficiency " << (double(elapsedNoCache)/double(elapsedCache))-1.0 << endl;
+ }
+ 
+ void testCachePerformance()
+@@ -201,7 +201,7 @@ milliSec typicalUse( Cache &CC, unsigned objectKind, unsigned maxObjectCount, un
+     try{
+         // Registering objects
+         for(size_t i=0;i<objectKind;i++)
+-            CC.Register(i, createProductNull);
++            CC.Register(static_cast<int>(i), createProductNull);
+         // Simulating real use
+         start = getmilliSeconds();
+         for(unsigned i=0;i<maxIteration;i++)
+-- 
+2.11.0
+

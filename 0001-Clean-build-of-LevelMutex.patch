@@ -1,0 +1,52 @@
+From 13ffb4ba1917d446d1e529830398642c8462e406 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Thu, 2 Feb 2017 19:33:46 +0100
+Subject: [PATCH 1/2] Clean build of LevelMutex.
+
+---
+ src/LevelMutex.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/LevelMutex.cpp b/src/LevelMutex.cpp
+index 024112a..394c90a 100644
+--- a/src/LevelMutex.cpp
++++ b/src/LevelMutex.cpp
+@@ -183,7 +183,7 @@ unsigned int CountMutexesAtCurrentLevel( void )
+ 
+ MutexErrors::Type DoMutexesMatchContainer( const LevelMutexInfo::MutexContainer & mutexes )
+ {
+-    const unsigned int count = mutexes.size();
++    const unsigned int count = static_cast<unsigned int>(mutexes.size());
+     if ( 0 == count )
+         return MutexErrors::EmptyContainer;
+     unsigned int currentLevel = GetCurrentThreadsLevel();
+@@ -317,7 +317,7 @@ MutexErrors::Type LevelMutexInfo::MultiLock( MutexContainer & mutexes )
+ {
+     assert( IsValidList() );
+ 
+-    const unsigned int count = mutexes.size();
++    const unsigned int count = static_cast<unsigned int>(mutexes.size());
+     if ( count == 0 )
+         return MutexErrors::EmptyContainer;
+ 
+@@ -400,7 +400,7 @@ MutexErrors::Type LevelMutexInfo::MultiLock( MutexContainer & mutexes,
+ 
+     if ( 0 == milliSeconds )
+         return MultiLock( mutexes );
+-    const unsigned int count = mutexes.size();
++    const unsigned int count = static_cast<unsigned int>(mutexes.size());
+     if ( 0 == count )
+         return MutexErrors::EmptyContainer;
+ 
+@@ -490,7 +490,7 @@ MutexErrors::Type LevelMutexInfo::MultiUnlock( MutexContainer & mutexes )
+             LevelMutexInfo::UnlockedLevel, result );
+     }
+ 
+-    const unsigned int count = mutexes.size();
++    const unsigned int count = static_cast<unsigned int>(mutexes.size());
+     if ( 1 < count )
+     {
+         ::std::sort( mutexes.begin(), mutexes.end() );
+-- 
+2.11.0
+
