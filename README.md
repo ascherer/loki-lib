@@ -10,7 +10,8 @@ It has been built and tested with **debbuild 17.1.2** and **rpmbuild
 
 Download [the SOURCE
 package](https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/loki-0.1.7.tar.bz2),
-put **loki.spec** in the **SPECS** directory and run
+add the extended set of **patch** files in the **SOURCES** directory,
+put **loki.spec** in the **SPECS** directory, and run
 
-    debbuild -ba SPECS/loki.spec
-    rpmbuild -ba SPECS/loki.spec
+    debbuild -ba SPECS/loki.spec [--without doc]
+    rpmbuild -ba SPECS/loki.spec [--without doc]
