@@ -1,7 +1,7 @@
-From f9a079b32899dd710692b4e461125bb34f7f51a1 Mon Sep 17 00:00:00 2001
+From 0d62036f4011e5be3c0bc8acfc63ac29c2d51a52 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
-Date: Thu, 2 Feb 2017 19:42:07 +0100
-Subject: [PATCH 2/2] Clear CachedFactoryTest.
+Date: Fri, 3 Feb 2017 22:02:47 +0100
+Subject: [PATCH 02/10] Clear CachedFactoryTest.
 
 ---
  test/CachedFactory/CachedFactoryTest.cpp | 6 +++---

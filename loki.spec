@@ -22,6 +22,14 @@ Distribution: openSUSE 42 (x86_64)
 Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
 Patch1: 0001-Clean-build-of-LevelMutex.patch
 Patch2: 0002-Clear-CachedFactoryTest.patch
+Patch3: 0003-Suppress-GCC-warning-in-Dependencies.patch
+Patch4: 0004-Hard-type-conversion-in-timer.patch
+Patch5: 0005-Suppress-two-GCC-warnings-in-main.patch
+Patch6: 0006-Several-GCC-warnings-fixed-in-strong.patch
+Patch7: 0007-Ignore-return-value-GCC-style.patch
+Patch8: 0008-Type-conversion-in-template-of-main.patch
+Patch9: 0009-Fix-GCC-warning-in-AssocVectortTest.patch
+Patch10: 0010-Un-use-locally-defined-typedef-in-headers.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
@@ -48,7 +56,7 @@ HTML documentation files for the Loki C++ Library
 %endif
 
 %prep
-%autosetup -n %{source_name}-%{version}
+%autosetup -n %{source_name}-%{version} -p1
 
 %build
 %{__make} build-static build-shared check

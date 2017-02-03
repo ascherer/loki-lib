@@ -1,0 +1,25 @@
+From c5c5cc30ea0df204b093dd811734efb024f86201 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:03:17 +0100
+Subject: [PATCH 03/10] Suppress GCC warning in Dependencies.
+
+---
+ test/Singleton/Dependencies.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/test/Singleton/Dependencies.cpp b/test/Singleton/Dependencies.cpp
+index 6bf1e38..203b0e6 100644
+--- a/test/Singleton/Dependencies.cpp
++++ b/test/Singleton/Dependencies.cpp
+@@ -454,6 +454,8 @@ int main()
+     system("PAUSE");
+ #endif
+ 
++    (void)p; // GCC warning suppressed
++
+     std::cout << "\nnow leaving main \n";
+     std::cout << "________________________________\n\n";
+ 
+-- 
+2.11.0
+

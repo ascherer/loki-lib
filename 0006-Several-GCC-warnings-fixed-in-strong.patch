@@ -1,0 +1,63 @@
+From 48f513c2a6f7be645f6297caa0e2f7a5e8243ce4 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:04:56 +0100
+Subject: [PATCH 06/10] Several GCC warnings fixed in strong.
+
+---
+ test/SmartPtr/strong.cpp | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/test/SmartPtr/strong.cpp b/test/SmartPtr/strong.cpp
+index 53a0517..8e29cf5 100644
+--- a/test/SmartPtr/strong.cpp
++++ b/test/SmartPtr/strong.cpp
+@@ -326,8 +326,8 @@ typedef Loki::StrongPtr< const BaseClass, false, TwoRefCounts, DisallowConversio
+ 
+ void DoWeakLeakTest( void )
+ {
+-    const unsigned int ctorCount = Counted::GetCtorCount();
+-    const unsigned int dtorCount = Counted::GetDtorCount();
++    const unsigned int ctorCount = Counted::GetCtorCount(); (void)ctorCount;
++    const unsigned int dtorCount = Counted::GetDtorCount(); (void)dtorCount;
+     assert( Counted::AllDestroyed() );
+ 
+     {
+@@ -672,7 +672,7 @@ void DoStrongReleaseTests( void )
+ 
+         // Prove that neither weak nor strong pointers can be
+         // released if any co-pointer is strong.
+-        bool released = ReleaseAll( w2, pNull );
++        bool released = ReleaseAll( w2, pNull ); (void)released;
+         assert( !released );
+ 
+         released = ReleaseAll( w1, pNull );
+@@ -687,7 +687,7 @@ void DoStrongReleaseTests( void )
+         // Prove that weak and strong pointers can be reset only
+         // if stored pointer matches parameter pointer - or there
+         // are no strong co-pointers.
+-        bool reset = ResetAll( w2, pNull );
++        bool reset = ResetAll( w2, pNull ); (void)reset;
+         assert( !reset );
+ 
+         reset = ResetAll( w1, pNull );
+@@ -726,7 +726,7 @@ void DoStrongReleaseTests( void )
+         NonConstBase_StrongCount_NoConvert_NoCheck_Reset_NoPropagate_ptr s2( w2 );
+ 
+         BaseClass * thing = NULL;
+-        bool released = ReleaseAll( w2, thing );
++        bool released = ReleaseAll( w2, thing ); (void)released;
+         assert( released );
+         assert( NULL != thing );
+         delete thing;
+@@ -749,7 +749,7 @@ void DoStrongReleaseTests( void )
+         // Prove that weak and strong pointers can be reset
+         // only if stored pointer matches parameter pointer
+         // - even if there are strong co-pointers.
+-        bool reset = ResetAll( w2, pNull );
++        bool reset = ResetAll( w2, pNull ); (void)reset;
+         assert( reset );
+ 
+         reset = ResetAll( w1, pNull );
+-- 
+2.11.0
+

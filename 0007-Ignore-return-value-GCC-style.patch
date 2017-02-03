@@ -1,0 +1,51 @@
+From f22e66e927ced364f00158bb7a6bca2acbceb5f5 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:05:23 +0100
+Subject: [PATCH 07/10] Ignore return value GCC-style.
+
+---
+ test/SmartPtr/LockTest.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/test/SmartPtr/LockTest.cpp b/test/SmartPtr/LockTest.cpp
+index 848d11a..ec93089 100644
+--- a/test/SmartPtr/LockTest.cpp
++++ b/test/SmartPtr/LockTest.cpp
+@@ -428,7 +428,7 @@ void DoLockedPtrTest( void )
+     cout << "Doing thread-locked pointer tests." << endl;
+     SafeA::GetIt();
+     UnsafeA::GetIt();
+-    ::system( "pause" );
++    if (::system( "pause" )) {}
+     {
+         ThreadPool pool;
+         pool.Create( 5, RunLocked );
+@@ -436,7 +436,7 @@ void DoLockedPtrTest( void )
+         pool.Join();
+     }
+     cout << "Doing thread-unsafe pointer tests." << endl;
+-    ::system( "pause" );
++    if (::system( "pause" )) {}
+     {
+         ThreadPool pool;
+         pool.Create( 5, Run );
+@@ -453,14 +453,14 @@ void DoLockedStorageTest( void )
+ {
+     cout << "Doing LockedStorage tests." << endl;
+     SelfLockedA::GetIt();
+-    ::system( "pause" );
++    if (::system( "pause" )) {}
+     {
+         ThreadPool pool;
+         pool.Create( 5, RunLockedStorage );
+         pool.Start();
+         pool.Join();
+     }
+-    ::system( "pause" );
++    if (::system( "pause" )) {}
+     SelfLockedA::Destroy();
+ }
+ 
+-- 
+2.11.0
+

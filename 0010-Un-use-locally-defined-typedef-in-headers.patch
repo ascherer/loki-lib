@@ -1,0 +1,45 @@
+From 83356a4fb361a26c8bd5f38aa52eb9014a84eb64 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:09:28 +0100
+Subject: [PATCH 10/10] (Un)use locally defined typedef in headers.
+
+---
+ include/loki/Pimpl.h     | 1 +
+ include/loki/StrongPtr.h | 2 ++
+ 2 files changed, 3 insertions(+)
+
+diff --git a/include/loki/Pimpl.h b/include/loki/Pimpl.h
+index ed0d1c7..628e247 100644
+--- a/include/loki/Pimpl.h
++++ b/include/loki/Pimpl.h
+@@ -91,6 +91,7 @@ namespace Loki
+             // - implement the destructor of the class 
+             // - don't inline the destructor
+             typedef char T_must_be_defined[sizeof(T) ? 1 : -1 ];
++            T_must_be_defined andUsed; (void)andUsed;
+         }
+ 
+ 
+diff --git a/include/loki/StrongPtr.h b/include/loki/StrongPtr.h
+index 7ec9766..f01ab7a 100644
+--- a/include/loki/StrongPtr.h
++++ b/include/loki/StrongPtr.h
+@@ -191,6 +191,7 @@ public:
+          use DeleteNothing instead.
+          */
+         typedef char Type_Must_Be_Defined[ sizeof(P) ? 1 : -1 ];
++        Type_Must_Be_Defined andUsed; (void)andUsed;
+         delete p;
+     }
+ 
+@@ -222,6 +223,7 @@ public:
+          use DeleteNothing instead.
+          */
+         typedef char Type_Must_Be_Defined[ sizeof(P) ? 1 : -1 ];
++        Type_Must_Be_Defined andUsed; (void)andUsed;
+         delete [] p;
+     }
+ 
+-- 
+2.11.0
+

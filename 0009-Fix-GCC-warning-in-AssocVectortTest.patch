@@ -1,0 +1,25 @@
+From 46e8fc20b2b238290f97380d12c9f69c02d311fc Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:07:09 +0100
+Subject: [PATCH 09/10] Fix GCC warning in AssocVectortTest.
+
+---
+ test/RegressionTest/AssocVectorTest.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/RegressionTest/AssocVectorTest.h b/test/RegressionTest/AssocVectorTest.h
+index 2cd8060..6aa4033 100644
+--- a/test/RegressionTest/AssocVectorTest.h
++++ b/test/RegressionTest/AssocVectorTest.h
+@@ -259,7 +259,7 @@ void test_vect2()
+     assert(it != vec21.end());
+     assert(it->second == 3);
+ 
+-    std::pair<test_vect2_t::iterator, bool> aux = vec21.insert(std::make_pair("xyz", 99));
++    std::pair<test_vect2_t::iterator, bool> aux = vec21.insert(std::make_pair("xyz", 99)); (void)aux;
+     assert(!aux.second);
+     assert(aux.first->first == "xyz");
+     assert(aux.first->second == 3);
+-- 
+2.11.0
+

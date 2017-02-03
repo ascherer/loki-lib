@@ -1,0 +1,31 @@
+From a593182403a8ed4430a7e3525884f92a46938f67 Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:03:54 +0100
+Subject: [PATCH 04/10] Hard type conversion in timer.
+
+---
+ test/SmallObj/timer.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/test/SmallObj/timer.h b/test/SmallObj/timer.h
+index 1b96440..72e30d0 100644
+--- a/test/SmallObj/timer.h
++++ b/test/SmallObj/timer.h
+@@ -31,12 +31,12 @@ public:
+ 
+     void start()
+     {
+-        t0 = clock();
++        t0 = static_cast<int>(clock());
+     }
+ 
+     void stop()
+     {
+-        t1 = clock();
++        t1 = static_cast<int>(clock());
+     }
+     
+     int t()
+-- 
+2.11.0
+

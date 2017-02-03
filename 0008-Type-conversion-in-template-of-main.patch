@@ -1,0 +1,36 @@
+From afd157c5630ae25d5dcf9551740d7f6461c0b14d Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Fri, 3 Feb 2017 22:06:38 +0100
+Subject: [PATCH 08/10] Type conversion in template of main.
+
+---
+ test/SafeFormat/main.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/SafeFormat/main.cpp b/test/SafeFormat/main.cpp
+index 54549e8..81b7e6f 100644
+--- a/test/SafeFormat/main.cpp
++++ b/test/SafeFormat/main.cpp
+@@ -39,8 +39,8 @@ Integral2 RandomInt(Integral1 low, Integral2 up)
+     // random integer in the range [0, n)
+     // We adjust to generate in the range [0, n]
+     const Integral2
+-    low2 = low,
+-           n = up - low;
++    low2 = static_cast<Integral2>(low),
++           n = static_cast<Integral2>(up - low);
+ 
+     assert(n > 0);
+ 
+@@ -52,7 +52,7 @@ Integral2 RandomInt(Integral1 low, Integral2 up)
+         r = Integral2(rand() / bucket_size);
+     while (r > n);
+ 
+-    r = r + low2;
++    r = static_cast<Integral2>(r + low2);
+     assert(r >= low2 && r <= up);
+     return r;
+ }
+-- 
+2.11.0
+

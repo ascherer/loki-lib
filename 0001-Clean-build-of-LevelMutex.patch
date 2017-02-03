@@ -1,7 +1,7 @@
-From 13ffb4ba1917d446d1e529830398642c8462e406 Mon Sep 17 00:00:00 2001
+From 4aaaeddf648cb031c44dd34e8e52afcd534168b4 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
-Date: Thu, 2 Feb 2017 19:33:46 +0100
-Subject: [PATCH 1/2] Clean build of LevelMutex.
+Date: Fri, 3 Feb 2017 22:02:13 +0100
+Subject: [PATCH 01/10] Clean build of LevelMutex.
 
 ---
  src/LevelMutex.cpp | 8 ++++----
