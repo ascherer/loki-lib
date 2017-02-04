@@ -1,7 +1,7 @@
-From 48f513c2a6f7be645f6297caa0e2f7a5e8243ce4 Mon Sep 17 00:00:00 2001
+From 822636760e7af20251efb220700ae9262f3a6f69 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
-Date: Fri, 3 Feb 2017 22:04:56 +0100
-Subject: [PATCH 06/10] Several GCC warnings fixed in strong.
+Date: Sat, 4 Feb 2017 13:13:04 +0100
+Subject: [PATCH 06/11] Several GCC warnings fixed in strong.
 
 ---
  test/SmartPtr/strong.cpp | 12 ++++++------

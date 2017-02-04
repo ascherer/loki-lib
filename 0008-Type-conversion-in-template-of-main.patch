@@ -1,7 +1,7 @@
-From afd157c5630ae25d5dcf9551740d7f6461c0b14d Mon Sep 17 00:00:00 2001
+From 38bfd1e4aba16f9a990717674131305ff9ff8dc8 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
-Date: Fri, 3 Feb 2017 22:06:38 +0100
-Subject: [PATCH 08/10] Type conversion in template of main.
+Date: Sat, 4 Feb 2017 13:13:54 +0100
+Subject: [PATCH 08/11] Type conversion in template of main.
 
 ---
  test/SafeFormat/main.cpp | 6 +++---

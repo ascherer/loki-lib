@@ -1,0 +1,43 @@
+From 9632ec21aeb42d519cb28e6290e381d6ec19b5ee Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Sat, 4 Feb 2017 13:15:00 +0100
+Subject: [PATCH 11/11] Fix SmallObjBench.
+
+---
+ test/SmallObj/SmallObjBench.cpp | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/test/SmallObj/SmallObjBench.cpp b/test/SmallObj/SmallObjBench.cpp
+index 57574bc..d7621bf 100644
+--- a/test/SmallObj/SmallObjBench.cpp
++++ b/test/SmallObj/SmallObjBench.cpp
+@@ -216,18 +216,18 @@ LOKI_SMALLOBJ_BENCH(delete_new_array    ,delete[] new T[N];)
+ LOKI_SMALLOBJ_BENCH(delete_new_array_mal,std::free(std::malloc(sizeof(T[TN])));)
+ LOKI_SMALLOBJ_BENCH(delete_new_array_all,std::allocator<T[TN]> st;st.deallocate(st.allocate(1), 1);)
+ 
+-LOKI_SMALLOBJ_BENCH_ARRAY(new_del_on_arr    , , arr[i] = new T; , 
+-                                                delete arr[i];)
+-LOKI_SMALLOBJ_BENCH_ARRAY(new_del_on_arr_mal, , arr[i] = static_cast<T*>(std::malloc(sizeof(T))); , 
+-                                                std::free(arr[i]);)
++LOKI_SMALLOBJ_BENCH_ARRAY(new_del_on_arr    ,
++                          (void)42;, arr[i] = new T; , delete arr[i];)
++LOKI_SMALLOBJ_BENCH_ARRAY(new_del_on_arr_mal,
++                          (void)42;, arr[i] = static_cast<T*>(std::malloc(sizeof(T))); , std::free(arr[i]);)
+ LOKI_SMALLOBJ_BENCH_ARRAY(new_del_on_arr_all,    std::allocator<T> st , 
+                                                 arr[i]=st.allocate(1); , 
+                                                 st.deallocate(arr[i], 1);)
+ 
+-LOKI_SMALLOBJ_BENCH_ARRAY(new_del_a_on_a    , , arr[i] = new T[TN]; , 
+-                                                delete[] arr[i];)
+-LOKI_SMALLOBJ_BENCH_ARRAY(new_del_a_on_a_mal, , arr[i] = static_cast<T*>(std::malloc(sizeof(T[TN]))); , 
+-                                                std::free(arr[i]);)
++LOKI_SMALLOBJ_BENCH_ARRAY(new_del_a_on_a    ,
++                          (void)42;, arr[i] = new T[TN]; , delete[] arr[i];)
++LOKI_SMALLOBJ_BENCH_ARRAY(new_del_a_on_a_mal,
++                          (void)42;, arr[i] = static_cast<T*>(std::malloc(sizeof(T[TN]))); , std::free(arr[i]);)
+ LOKI_SMALLOBJ_BENCH_ARRAY(new_del_a_on_a_all,std::allocator<T[TN]> st , 
+                                                 arr[i]=reinterpret_cast<T*>(st.allocate(1)); , 
+                                                 st.deallocate(reinterpret_cast<T(*)[TN]>(arr[i]), 1);)
+-- 
+2.11.0
+
