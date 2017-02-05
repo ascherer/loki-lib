@@ -73,7 +73,7 @@ cd doc; doxygen Doxyfile
 %{__cp} -a include/%{source_name} %{buildroot}%{_includedir}
 %{__mkdir_p} %{buildroot}%{_libdir}
 %{__cp} -a lib/lib%{source_name}.* %{buildroot}%{_libdir}
-(cd %{buildroot}%{_libdir} && ln -s lib%{source_name}.so.%{version} lib%{source_name}.so)
+(cd %{buildroot}%{_libdir} && %{__ln_s} lib%{source_name}.so.%{version} lib%{source_name}.so)
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/ld.so.conf.d
 %{__echo} "%{_libdir}/%{name}" > \
 	%{buildroot}%{_sysconfdir}/ld.so.conf.d/%{name}.conf
