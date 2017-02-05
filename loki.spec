@@ -78,7 +78,7 @@ cd doc; doxygen Doxyfile
 	%{buildroot}%{_sysconfdir}/ld.so.conf.d/%{name}.conf
 %if %{with doc}
 %{__mkdir_p} %{buildroot}%{_docdir}/%{name}-%{version}
-%{__cp} -a doc/{flex,html,yasli} %{buildroot}%{_docdir}/%{name}-%{version}
+%{__cp} -a doc/flex doc/html doc/yasli %{buildroot}%{_docdir}/%{name}-%{version}
 %endif
 
 %files
