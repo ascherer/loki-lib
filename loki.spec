@@ -43,6 +43,7 @@ Group: System Environment/Libraries
 %package doc
 Summary: The Loki C++ html docs
 Group: System Environment/Libraries
+BuildArch: noarch
 %endif
 
 %description
