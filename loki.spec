@@ -1,4 +1,5 @@
 %bcond_without doc
+%bcond_without patches
 
 %define source_name loki
 Name: %{source_name}-lib
@@ -20,6 +21,8 @@ Distribution: openSUSE 42 (x86_64)
 %endif
 
 Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
+
+%if %{with patches}
 Patch1: 0001-Clean-build-of-LevelMutex.patch
 Patch2: 0002-Clear-CachedFactoryTest.patch
 Patch3: 0003-Suppress-GCC-warning-in-Dependencies.patch
@@ -32,6 +35,7 @@ Patch9: 0009-Fix-GCC-warning-in-AssocVectortTest.patch
 Patch10: 0010-Un-use-locally-defined-typedef-in-headers.patch
 Patch11: 0011-Fix-SmallObjBench.patch
 Patch12: 0001-Update-Doxyfile.patch
+%endif
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
