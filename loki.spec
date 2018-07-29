@@ -108,7 +108,7 @@ cd doc; doxygen Doxyfile
 %postun -p /sbin/ldconfig
 
 %changelog
-* Tue Feb 01 2017 Andreas Scherer <andreas_github@freenet.de>
+* Wed Feb 01 2017 Andreas Scherer <andreas_github@freenet.de>
 - Update for rpmbuild 4.12.0.1 and debbuild 17.1.2
 
 * Thu Mar 16 2006 Regis Desgroppes <rdesgroppes@besancon.parkeon.com>
