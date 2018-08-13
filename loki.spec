@@ -19,6 +19,9 @@ Group: Productivity/Development
 Distribution: openSUSE 42 (x86_64)
 %global __echo `which echo`
 %endif
+%if %{with doc}
+BuildRequires: doxygen
+%endif
 
 Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
 
