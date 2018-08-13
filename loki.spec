@@ -66,10 +66,13 @@ HTML documentation files for the Loki C++ Library
 %autosetup -n %{source_name}-%{version} -p1
 
 %build
-%{__make} build-static build-shared check
+%{__make} build-static build-shared
 %if %{with doc}
 cd doc; doxygen Doxyfile
 %endif
+
+%check
+%{__make} check
 
 %install
 %{__rm} -rf %{buildroot}
