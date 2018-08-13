@@ -43,11 +43,11 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Summary: The Loki C++ headers and development libraries
 Group: System Environment/Libraries
 
-%if %{with doc}
 %package doc
 Summary: The Loki C++ html docs
 Group: System Environment/Libraries
 BuildArch: noarch
+%if %{with doc}
 BuildRequires: doxygen
 %endif
 
@@ -58,10 +58,8 @@ patterns and idioms.
 %description devel
 Headers, static libraries, and shared object symlinks for the Loki C++ Library
 
-%if %{with doc}
 %description doc
 HTML documentation files for the Loki C++ Library
-%endif
 
 %prep
 %autosetup -n %{source_name}-%{version} -p1
