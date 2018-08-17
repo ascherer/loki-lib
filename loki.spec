@@ -42,6 +42,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 %package devel
 Summary: The Loki C++ headers and development libraries
 Group: System Environment/Libraries
+Requires: %{name}
 
 %package doc
 Summary: The Loki C++ html docs
