@@ -17,7 +17,7 @@ Distribution: Kubuntu 16.04 (x86_64)
 %else
 Group: Productivity/Development
 Distribution: openSUSE 42 (x86_64)
-%global __echo `which echo`
+%global __echo %(which echo)
 %endif
 
 Source0: https://downloads.sourceforge.net/project/loki-lib/Loki/Loki%200.1.7/%{source_name}-%{version}.tar.bz2
