@@ -13,7 +13,7 @@ Packager: Andreas Scherer <https://ascherer.github.io/>
 
 %if %{_vendor} == "debbuild"
 Group: devel
-Distribution: Kubuntu 16.04 (x86_64)
+Distribution: Kubuntu 18.04 (x86_64)
 %else
 Group: Productivity/Development
 Distribution: openSUSE 42 (x86_64)
