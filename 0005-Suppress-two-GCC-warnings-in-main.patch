@@ -1,7 +1,7 @@
-From bbcfd6c8226788037b38f0b26155a16db3f06d7f Mon Sep 17 00:00:00 2001
+From b4ae302989b4700694ee33d0fc67643e61f1a461 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:12:45 +0100
-Subject: [PATCH 05/13] Suppress two GCC warnings in main.
+Subject: [PATCH 05/14] Suppress two GCC warnings in main.
 
 ---
  test/SmartPtr/main.cpp | 4 +++-

@@ -1,0 +1,34 @@
+From 00d21999bfae83f8860bcb5a8b75bd4bebffffed Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Sat, 9 Feb 2019 14:50:54 +0100
+Subject: [PATCH 14/14] Return type corrected.
+
+---
+ include/loki/Threads.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/include/loki/Threads.h b/include/loki/Threads.h
+index cb44f09..c1a4458 100644
+--- a/include/loki/Threads.h
++++ b/include/loki/Threads.h
+@@ -246,7 +246,7 @@
+             return lval;                                                 \
+         }                                                                \
+                                                                          \
+-        static void AtomicAssign(volatile IntType& lval, const IntType val) \
++        static IntType AtomicAssign(volatile IntType& lval, const IntType val) \
+         {                                                                \
+             ::pthread_mutex_lock( &atomic_mutex_ );                      \
+             lval = val;                                                  \
+@@ -254,7 +254,7 @@
+             return lval;                                                 \
+         }                                                                \
+                                                                          \
+-        static void AtomicAssign(IntType& lval, volatile const IntType& val) \
++        static IntType AtomicAssign(IntType& lval, volatile const IntType& val) \
+         {                                                                \
+             ::pthread_mutex_lock( &atomic_mutex_ );                      \
+             lval = val;                                                  \
+-- 
+2.20.1
+

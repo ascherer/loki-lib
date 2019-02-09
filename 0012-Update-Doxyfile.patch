@@ -1,7 +1,7 @@
-From 37bd1661fe38fa1f354d8eea0a13eb354df209da Mon Sep 17 00:00:00 2001
+From 6f1b08f47a72decb7078ca197c415e5b02a080ff Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sun, 5 Feb 2017 14:24:42 +0100
-Subject: [PATCH 12/13] Update Doxyfile.
+Subject: [PATCH 12/14] Update Doxyfile.
 
 Execute 'doxygen -s -u Doxyfile'.
 ---

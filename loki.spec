@@ -36,6 +36,7 @@ Patch10: 0010-Un-use-locally-defined-typedef-in-headers.patch
 Patch11: 0011-Fix-SmallObjBench.patch
 Patch12: 0012-Update-Doxyfile.patch
 Patch13: 0013-Unambiguate-bad_function_call.patch
+Patch14: 0014-Return-type-corrected.patch
 %endif
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
