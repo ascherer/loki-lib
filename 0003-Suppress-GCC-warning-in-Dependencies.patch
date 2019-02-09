@@ -1,7 +1,7 @@
-From 249bfb7799122597902068c197da474cd088633f Mon Sep 17 00:00:00 2001
+From b314efe9a660733cbed5b6da499f9bd0eedeb7ab Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:12:01 +0100
-Subject: [PATCH 03/11] Suppress GCC warning in Dependencies.
+Subject: [PATCH 03/13] Suppress GCC warning in Dependencies.
 
 ---
  test/Singleton/Dependencies.cpp | 2 ++
@@ -21,5 +21,5 @@ index 6bf1e38..203b0e6 100644
      std::cout << "________________________________\n\n";
  
 -- 
-2.11.0
+2.20.1
 

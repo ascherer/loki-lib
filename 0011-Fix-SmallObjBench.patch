@@ -1,7 +1,7 @@
-From 9632ec21aeb42d519cb28e6290e381d6ec19b5ee Mon Sep 17 00:00:00 2001
+From 2981fb4d69d404a871e2f6babaafbc0ddff45619 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:15:00 +0100
-Subject: [PATCH 11/11] Fix SmallObjBench.
+Subject: [PATCH 11/13] Fix SmallObjBench.
 
 ---
  test/SmallObj/SmallObjBench.cpp | 16 ++++++++--------
@@ -39,5 +39,5 @@ index 57574bc..d7621bf 100644
                                                  arr[i]=reinterpret_cast<T*>(st.allocate(1)); , 
                                                  st.deallocate(reinterpret_cast<T(*)[TN]>(arr[i]), 1);)
 -- 
-2.11.0
+2.20.1
 

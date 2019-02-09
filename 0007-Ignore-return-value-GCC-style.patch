@@ -1,7 +1,7 @@
-From 5fcabe3010d9bb95d802b78560ccdabb9844ca39 Mon Sep 17 00:00:00 2001
+From 09031272f2394100a6e4173258701adb45f3a5b9 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:13:23 +0100
-Subject: [PATCH 07/11] Ignore return value GCC-style.
+Subject: [PATCH 07/13] Ignore return value GCC-style.
 
 ---
  test/SmartPtr/LockTest.cpp | 8 ++++----
@@ -47,5 +47,5 @@ index 848d11a..ec93089 100644
  }
  
 -- 
-2.11.0
+2.20.1
 

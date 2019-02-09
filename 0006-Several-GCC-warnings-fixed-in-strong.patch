@@ -1,7 +1,7 @@
-From 822636760e7af20251efb220700ae9262f3a6f69 Mon Sep 17 00:00:00 2001
+From 9b7b4bf1afc5c9449bc1a17bb1d9661b7b0a6390 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:13:04 +0100
-Subject: [PATCH 06/11] Several GCC warnings fixed in strong.
+Subject: [PATCH 06/13] Several GCC warnings fixed in strong.
 
 ---
  test/SmartPtr/strong.cpp | 12 ++++++------
@@ -59,5 +59,5 @@ index 53a0517..8e29cf5 100644
  
          reset = ResetAll( w1, pNull );
 -- 
-2.11.0
+2.20.1
 

@@ -1,7 +1,7 @@
-From fe4c777a50d99a3c332c7841a1fd2ed12a36eb1f Mon Sep 17 00:00:00 2001
+From adba4f72c5f6969eb618a3177b72ab91d5bfb552 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:11:01 +0100
-Subject: [PATCH 01/11] Clean build of LevelMutex.
+Subject: [PATCH 01/13] Clean build of LevelMutex.
 
 ---
  src/LevelMutex.cpp | 8 ++++----
@@ -48,5 +48,5 @@ index 024112a..394c90a 100644
      {
          ::std::sort( mutexes.begin(), mutexes.end() );
 -- 
-2.11.0
+2.20.1
 

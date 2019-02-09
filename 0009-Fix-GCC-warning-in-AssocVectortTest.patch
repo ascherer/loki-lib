@@ -1,7 +1,7 @@
-From 1a55279d280460c0fa4a3960e22da233cb523bbe Mon Sep 17 00:00:00 2001
+From 159486dddf615723576e8c85c5d22c03e675e6d0 Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:14:14 +0100
-Subject: [PATCH 09/11] Fix GCC warning in AssocVectortTest.
+Subject: [PATCH 09/13] Fix GCC warning in AssocVectortTest.
 
 ---
  test/RegressionTest/AssocVectorTest.h | 2 +-
@@ -21,5 +21,5 @@ index 2cd8060..6aa4033 100644
      assert(aux.first->first == "xyz");
      assert(aux.first->second == 3);
 -- 
-2.11.0
+2.20.1
 

@@ -1,7 +1,7 @@
-From 93becad77f3f314dfb8fa2fa8797c3ffa6c80c4c Mon Sep 17 00:00:00 2001
+From d5c394dc2972fe93e2c515433a73a7f36809aa9e Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:14:36 +0100
-Subject: [PATCH 10/11] (Un)use locally defined typedef in headers.
+Subject: [PATCH 10/13] (Un)use locally defined typedef in headers.
 
 ---
  include/loki/Pimpl.h     | 1 +
@@ -41,5 +41,5 @@ index 7ec9766..f01ab7a 100644
      }
  
 -- 
-2.11.0
+2.20.1
 

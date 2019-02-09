@@ -34,7 +34,8 @@ Patch8: 0008-Type-conversion-in-template-of-main.patch
 Patch9: 0009-Fix-GCC-warning-in-AssocVectortTest.patch
 Patch10: 0010-Un-use-locally-defined-typedef-in-headers.patch
 Patch11: 0011-Fix-SmallObjBench.patch
-Patch12: 0001-Update-Doxyfile.patch
+Patch12: 0012-Update-Doxyfile.patch
+Patch13: 0013-Unambiguate-bad_function_call.patch
 %endif
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-root

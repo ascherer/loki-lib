@@ -1,7 +1,7 @@
-From 90a3e97bac2c18794f170a1243d09c749a65dba0 Mon Sep 17 00:00:00 2001
+From 2c10176d13e92889aef9feca87b5747bb069c6ab Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:12:20 +0100
-Subject: [PATCH 04/11] Hard type conversion in timer.
+Subject: [PATCH 04/13] Hard type conversion in timer.
 
 ---
  test/SmallObj/timer.h | 4 ++--
@@ -27,5 +27,5 @@ index 1b96440..72e30d0 100644
      
      int t()
 -- 
-2.11.0
+2.20.1
 

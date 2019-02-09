@@ -1,11 +1,11 @@
-From bbef281fd63fcc15f3fd63b5518b9d9b84096c3b Mon Sep 17 00:00:00 2001
+From 37bd1661fe38fa1f354d8eea0a13eb354df209da Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sun, 5 Feb 2017 14:24:42 +0100
-Subject: [PATCH] Update Doxyfile.
+Subject: [PATCH 12/13] Update Doxyfile.
 
 Execute 'doxygen -s -u Doxyfile'.
 ---
- doc/Doxyfile | 213 +++++++++++++++++++++++++++++++++++++++++++----------------
+ doc/Doxyfile | 213 +++++++++++++++++++++++++++++++++++++--------------
  1 file changed, 155 insertions(+), 58 deletions(-)
 
 diff --git a/doc/Doxyfile b/doc/Doxyfile
@@ -397,5 +397,5 @@ index 3e15dd2..be995b7 100644
 -#---------------------------------------------------------------------------
 -SEARCHENGINE           = YES
 -- 
-2.11.0
+2.20.1
 
