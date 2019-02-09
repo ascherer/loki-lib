@@ -1,0 +1,25 @@
+From 06f506010437400f1ea6bb11b1caaccf7c6f3b7e Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Sat, 9 Feb 2019 16:28:45 +0100
+Subject: [PATCH 15/17] C++11 produces tons of warnings.
+
+Apparantly, Loki 0.1.7 is outdated.
+---
+ Makefile.common | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.common b/Makefile.common
+index d6f411a..6d3e8ea 100644
+--- a/Makefile.common
++++ b/Makefile.common
+@@ -2,6 +2,6 @@ VERSION := 0.1.7
+ OS ?= $(shell uname -s)
+ 
+ CXXWARNFLAGS := -Wall -Wold-style-cast -Wundef -Wsign-compare -Wconversion -Wpointer-arith -pedantic
+-CXXFLAGS := $(CXXWARNFLAGS) -g -O2
++CXXFLAGS := $(CXXWARNFLAGS) -g -O2 --std=c++03
+ 
+ prefix := /usr
+-- 
+2.20.1
+

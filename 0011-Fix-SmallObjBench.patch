@@ -1,7 +1,7 @@
-From 4ddb091b3b1249fc69ecce5f2f46a908450e82b1 Mon Sep 17 00:00:00 2001
+From c74a48368cb66f23b58fb64c79dc0c25f1f60aed Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 4 Feb 2017 13:15:00 +0100
-Subject: [PATCH 11/15] Fix SmallObjBench.
+Subject: [PATCH 11/17] Fix SmallObjBench.
 
 ---
  test/SmallObj/SmallObjBench.cpp | 16 ++++++++--------

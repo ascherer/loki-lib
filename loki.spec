@@ -38,6 +38,8 @@ Patch12: 0012-Update-Doxyfile.patch
 Patch13: 0013-Unambiguate-bad_function_call.patch
 Patch14: 0014-Return-type-corrected.patch
 Patch15: 0015-C-11-produces-tons-of-warnings.patch
+Patch16: 0016-Compile-tests-with-C-03.patch
+Patch17: 0017-Un-use-it-when-optimizing.patch
 %endif
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-root

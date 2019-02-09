@@ -1,0 +1,25 @@
+From e8f7958997ee30f9db54f51c8cc6448411f35cce Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Sat, 9 Feb 2019 16:46:36 +0100
+Subject: [PATCH 17/17] Un-use 'it' when optimizing.
+
+---
+ test/RegressionTest/AssocVectorTest.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/RegressionTest/AssocVectorTest.h b/test/RegressionTest/AssocVectorTest.h
+index 6aa4033..ef2c0a1 100644
+--- a/test/RegressionTest/AssocVectorTest.h
++++ b/test/RegressionTest/AssocVectorTest.h
+@@ -318,7 +318,7 @@ void test_vect4()
+     vec41.insert(std::make_pair(AVTestClass(200), AVTestClass(200)));
+     assert(vec41.size() == 102);
+ 
+-    test_vect4_t::iterator it = vec41.find(AVTestClass(22));
++    test_vect4_t::iterator it = vec41.find(AVTestClass(22)); (void)it;
+     assert(it != vec41.end());
+     assert(it->second.value_ == 22);
+ 
+-- 
+2.20.1
+

@@ -1,0 +1,53 @@
+From 210386da43e274ffe87046895a29457c2ab8e70f Mon Sep 17 00:00:00 2001
+From: debbuild <debbuild>
+Date: Sat, 9 Feb 2019 16:37:16 +0100
+Subject: [PATCH 16/17] Compile tests with C++03.
+
+---
+ test/Longevity/Makefile  | 2 +-
+ test/SafeFormat/Makefile | 2 +-
+ test/SmallObj/Makefile   | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/Longevity/Makefile b/test/Longevity/Makefile
+index ae22023..e28f156 100644
+--- a/test/Longevity/Makefile
++++ b/test/Longevity/Makefile
+@@ -6,7 +6,7 @@ OBJ1 := $(SRC1:.cpp=.o)
+ BIN2 := main2$(BIN_SUFFIX)
+ SRC2 := main2.cpp
+ OBJ2 := $(SRC2:.cpp=.o)
+-CXXFLAGS := $(CXXWARNFLAGS) -g -fexpensive-optimizations -O3
++CXXFLAGS := $(CXXWARNFLAGS) -g -fexpensive-optimizations -O3 --std=c++03
+ 
+ .PHONY: all clean
+ all: $(BIN1) $(BIN2)
+diff --git a/test/SafeFormat/Makefile b/test/SafeFormat/Makefile
+index 668990e..e866855 100644
+--- a/test/SafeFormat/Makefile
++++ b/test/SafeFormat/Makefile
+@@ -3,7 +3,7 @@ include ../Makefile.common
+ BIN := main$(BIN_SUFFIX)
+ SRC := main.cpp
+ OBJ := $(SRC:.cpp=.o)
+-CXXFLAGS := $(CXXWARNFLAGS) -g -fexpensive-optimizations -O3
++CXXFLAGS := $(CXXWARNFLAGS) -g -fexpensive-optimizations -O3 --std=c++03
+ 
+ .PHONY: all clean
+ all: $(BIN)
+diff --git a/test/SmallObj/Makefile b/test/SmallObj/Makefile
+index 80d903b..32716ed 100644
+--- a/test/SmallObj/Makefile
++++ b/test/SmallObj/Makefile
+@@ -6,7 +6,7 @@ OBJ1 := $(SRC1:.cpp=.o)
+ BIN2 := SmallObjSingleton$(BIN_SUFFIX)
+ SRC2 := SmallObjSingleton.cpp
+ OBJ2 := $(SRC2:.cpp=.o)
+-CXXFLAGS := $(CXXWARNFLAGS) -g -fexpensive-optimizations -O3
++CXXFLAGS := $(CXXWARNFLAGS) -g -fexpensive-optimizations -O3 --std=c++03
+ 
+ .PHONY: all clean
+ all: $(BIN1) $(BIN2)
+-- 
+2.20.1
+

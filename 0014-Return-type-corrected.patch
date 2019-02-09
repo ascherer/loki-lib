@@ -1,7 +1,7 @@
-From d2e8f0f4a5c0aa54fa3f3e90b75e52431a73f998 Mon Sep 17 00:00:00 2001
+From 2e04abb2b3d561d07ec2928eec0056140f2abc9a Mon Sep 17 00:00:00 2001
 From: debbuild <debbuild>
 Date: Sat, 9 Feb 2019 14:50:54 +0100
-Subject: [PATCH 14/15] Return type corrected.
+Subject: [PATCH 14/17] Return type corrected.
 
 ---
  include/loki/Threads.h | 4 ++--
