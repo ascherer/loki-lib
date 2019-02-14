@@ -1,4 +1,4 @@
-# Welcome to the C++ library Loki.
+# Welcome to the C++ library Loki
 
 Loki is a C++ library of designs, containing flexible implementations of common
 design patterns and idioms. 
@@ -15,3 +15,10 @@ put **loki.spec** in the **SPECS** directory, and run
 
     debbuild -ba SPECS/loki.spec [--without doc]
     rpmbuild -ba SPECS/loki.spec [--without doc]
+
+# News flash
+
+After the recent system upgrade to “Bionic Beaver” with version 7.3 of the
+“GNU Compiler Collection,” it's clear that the Loki C++ Library is hopelessly
+outdated. The project on SourceForge has been abandoned, so I stop this
+project at “C++03”.
